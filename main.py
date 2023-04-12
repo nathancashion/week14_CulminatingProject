@@ -14,7 +14,7 @@ response = urlopen(url)
 data_json = json.loads(response.read())
 
 # print the json response 
-print(data_json)
+print(type(data_json))
 
 
 # convert numerical strings
@@ -22,7 +22,8 @@ print(data_json)
 
 # What percentage of adults in the 18–34-year age range saw a doctor
 # for a “Wellness Visit” in 2019 and 2020?
-
+def wellnessVisit ():
+    ...
 
 # Which group of adults had the highest percentage of “Obesity” in 2020?
 
