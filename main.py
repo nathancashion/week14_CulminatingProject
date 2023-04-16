@@ -1,5 +1,5 @@
 # import urllib library 
-from urllib.request import urlopen
+# from urllib.request import urlopen
 
 # import json 
 import json
@@ -16,17 +16,17 @@ import json
 # read local JSON file & load as Python object
 cdc_file = open("cdcData.json", "r")
 cdc = json.load(cdc_file)
+
+# filter out only the data
 meta = cdc['meta']
 data = cdc['data']
 
-# load JSON to filter out only the data
-print(type(cdc))
-print(meta)
-print(type(meta))
+for Row in data:
+    print(f"row: {data[3349][8:14]}")
 
 # read through the file line by line
-lines = cdc_file.readlines()
-#
+# lines = data.readlines()
+
 # for L in lines:
 #     print(lines)
 
@@ -34,8 +34,7 @@ lines = cdc_file.readlines()
 
 
 # print the json response
-print(f"cdc_file is a {type(cdc_file)}")
-print(f"lines is a {type(lines)}")
+# print(f"lines is a {type(lines)}")
 
 
 # extract only the meaningful data
