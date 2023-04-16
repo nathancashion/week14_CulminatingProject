@@ -13,18 +13,27 @@ import json
 # storing the JSON response from url in data
 # data_json = json.loads(response.read())
 
-# import local JSON file
+# read local JSON file & load as Python object
 cdc_file = open("cdcData.json", "r")
+cdc = json.load(cdc_file)
+meta = cdc['meta']
+data = cdc['data']
 
-# filter out only the data
-cdc_data = json.load(cdc_file)
-just_data = cdc_data['data']
+# load JSON to filter out only the data
+print(type(cdc))
+print(meta)
+print(type(meta))
 
 # read through the file line by line
-lines = just_data.readlines()
+lines = cdc_file.readlines()
+#
+# for L in lines:
+#     print(lines)
+
+# just_data = cdc_data['data']
+
 
 # print the json response
-print(lines)
 print(f"cdc_file is a {type(cdc_file)}")
 print(f"lines is a {type(lines)}")
 
