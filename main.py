@@ -1,7 +1,7 @@
 # import urllib library 
 # from urllib.request import urlopen
 
-# import json 
+# import json module
 import json
 
 # store the URL in url as parameter for urlopen 
@@ -21,11 +21,19 @@ cdc = json.load(cdc_file)
 meta = cdc['meta']
 data = cdc['data']
 
+print(data[8:14])
+
+# iterate over lines to find just outcomes and data
+# I'm trying to slice the lists by index, but I don't know how to find the index of such a long list
 for Row in data:
-    print(f"row: {data[3349][8:14]}")
+    outcome = data[7194][8]
+    group = data[7194][9]
+    # if outcome == "Wellness visit":
+    print(f"outcome: {outcome}\n group: {group}")
 
 # read through the file line by line
 # lines = data.readlines()
+# readlines() does not work on list object
 
 # for L in lines:
 #     print(lines)
