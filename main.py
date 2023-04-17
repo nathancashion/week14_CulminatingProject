@@ -21,15 +21,9 @@ cdc = json.load(cdc_file)
 meta = cdc['meta']
 data = cdc['data']
 
-print(data[8:14])
+cdc_file.close()
 
 # iterate over lines to find just outcomes and data
-# I'm trying to slice the lists by index, but I don't know how to find the index of such a long list
-for Row in data:
-    outcome = data[7194][8]
-    group = data[7194][9]
-    # if outcome == "Wellness visit":
-    print(f"outcome: {outcome}\n group: {group}")
 
 # read through the file line by line
 # lines = data.readlines()
@@ -37,8 +31,6 @@ for Row in data:
 
 # for L in lines:
 #     print(lines)
-
-# just_data = cdc_data['data']
 
 
 # print the json response
@@ -50,8 +42,17 @@ for Row in data:
 
 # What percentage of adults in the 18–34-year age range saw a doctor
 # for a “Wellness Visit” in 2019 and 2020?
-# def wellnessVisit ():
-#     if meaningfulData[14] == "2019" or "2020":
+def wellnessVisit ():
+    for Row in data:
+        if Row[8] == "Wellness visit" and Row[9] == "18-34 years":
+            if Row[14] == "2019":
+                percentage2019 = Row[10]
+            elif Row[14] == "2020":
+                percentage2020 = Row[10]
+            else:
+                percentage = 0
+    print(f"For the 18-34 year-old age group, the percentage of Wellness visits in 2019 was {percentage2019}%")
+    print(f"For the 18-34 year-old age group, the percentage of Wellness visits in 2020 was {percentage2020}%")
 
 # Which group of adults had the highest percentage of “Obesity” in 2020?
 # def obesity():
@@ -60,4 +61,5 @@ for Row in data:
 # “Difficulty communicating” from 2019 to 2020?
 
 
-cdc_file.close()
+if __name__ == '__main__':
+    wellnessVisit()
