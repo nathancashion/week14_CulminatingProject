@@ -1,27 +1,27 @@
-# import urllib library 
-# from urllib.request import urlopen
-
 # import json module
 import json
 
-# store the URL in url as parameter for urlopen 
-# url = "https://data.cdc.gov/api/views/25m4-6qqq/rows.json"
+# import urllib library
+from urllib.request import urlopen
+
+# store the URL in url as parameter for urlopen
+url = "https://data.cdc.gov/api/views/25m4-6qqq/rows.json"
 
 # store the response of URL 
-# response = urlopen(url)
+response = urlopen(url)
 
 # storing the JSON response from url in data
-# data_json = json.loads(response.read())
+cdc = json.loads(response.read())
 
 # read local JSON file & load as Python object
-cdc_file = open("cdcData.json", "r")
-cdc = json.load(cdc_file)
+# cdc_file = open("cdcData.json", "r")
+# cdc = json.load(cdc_file)
 
 # filter out only the data
 meta = cdc['meta']
 data = cdc['data']
 
-cdc_file.close()
+# cdc_file.close()
 
 # iterate over lines to find just outcomes and data
 
