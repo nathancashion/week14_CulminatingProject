@@ -43,6 +43,8 @@ data = cdc['data']
 # What percentage of adults in the 18–34-year age range saw a doctor
 # for a “Wellness Visit” in 2019 and 2020?
 def wellnessVisit ():
+    percentage2019 = 0
+    percentage2020 = 0
     for Row in data:
         if Row[8] == "Wellness visit" and Row[9] == "18-34 years":
             if Row[14] == "2019":
@@ -69,12 +71,26 @@ def obesity():
 
 # which groups of adults had an increased percentage of
 # “Difficulty communicating” from 2019 to 2020?
-# def difficultyComms():
-#     diff = 0
-#     for Row in data:
-#         diff == Row[]
+def difficultyComms():
+    diff = 0.0
+    groupList = [["Group", "Difference"]]
+    for Row in data:
+        if Row[8] == "Difficulty communicating" and Row[14] == "2020":
+            pct_diff_2020 = float(Row[10])
+            group = Row[9]
+            for NextRow in data:
+                if NextRow[9] == group and NextRow[14] == "2019":
+                    pct_diff_2019 = float(NextRow[10])
+                    diff = pct_diff_2020 - pct_diff_2019
+                    if diff > 0.0:
+                        groupList.append([group, diff])
+    print("The groups who had increased difficulty communicating from 2019 to 2020 were:")
+    for i in groupList:
+        print(f"    {i[0]}, ({i[1]})")
+
 
 
 if __name__ == '__main__':
     wellnessVisit()
     obesity()
+    difficultyComms()
