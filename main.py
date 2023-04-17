@@ -55,11 +55,26 @@ def wellnessVisit ():
     print(f"For the 18-34 year-old age group, the percentage of Wellness visits in 2020 was {percentage2020}%")
 
 # Which group of adults had the highest percentage of “Obesity” in 2020?
-# def obesity():
+def obesity():
+    highest = 0
+    group = "None"
+
+    for Row in data:
+        if Row[14] == "2020" and Row[8] == "Obesity":
+            if float(Row[10]) > highest and float(Row[10])< 101:
+                highest = float(Row[10])
+                group = Row[9]
+                percentage = Row[10]
+    print(f"The group with the highest percentage of Obesity in 2020 was {group} at {percentage}%.")
 
 # which groups of adults had an increased percentage of
 # “Difficulty communicating” from 2019 to 2020?
+# def difficultyComms():
+#     diff = 0
+#     for Row in data:
+#         diff == Row[]
 
 
 if __name__ == '__main__':
     wellnessVisit()
+    obesity()
