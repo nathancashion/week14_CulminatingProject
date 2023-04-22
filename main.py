@@ -79,7 +79,7 @@ def difficulty_comms():
                 pct_diff_2020 = float(Row[10])
                 group = Row[9]
                 for NextRow in data:
-                    if Row[8] == "Difficulty communicating" and NextRow[9] == group and NextRow[14] == "2019":
+                    if NextRow[8] == "Difficulty communicating" and NextRow[9] == group and NextRow[14] == "2019":
                         pct_diff_2019 = float(NextRow[10])
                         diff = pct_diff_2020 - pct_diff_2019
                         if diff > 0.0:

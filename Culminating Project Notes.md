@@ -13,7 +13,14 @@ I've also tried to import the file as a data object/lists. I try to slice the li
 ### Work-around
 While I couldn't find a solution for the project in Python, I imported the data set into Tableau (which I've been learning for the Info Data Viz course). I was able to create charts and filter the data to find the following answers:
 1. The percentage of adults in the 18-34-year age range who saw a doctor for a "Wellness Visit" in 2019 was 69.1% and in 2020 was 67.9%.
-2. The group of adults that had the highest percentage of “Obesity” in 2020 was "Other Coverage" at 72.30%.
+2. The group of adults that had the highest percentage of “Obesity” in 2020 was "Other Coverage" at 72.30%.Week Fifteen Discussion: Reflections
+22 unread replies.22 replies.
+You all are now officially Python programmers! Share your thoughts this week about what you learned. Here are some things you may wish to discuss:
+
+Has learning how to write programs changed how you think?
+What was the most challenging part of the class?
+Do you plan to write any Python scripts in the future? What for?
+How might your new skills help you in everyday life or in your career?
 3. The following groups of adults had an increased percentage of “Difficulty communicating” from 2019 to 2020:
 		- 45-64 years
 		- 50-64 years
