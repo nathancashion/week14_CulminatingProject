@@ -62,7 +62,7 @@ def obesity():
     percentage = 0
     for Row in data:
         if Row[14] == "2020" and Row[8] == "Obesity":
-            if 101 < float(Row[10]) > highest:
+            if float(Row[10]) > highest and float(Row[10])< 101:
                 highest = float(Row[10])
                 group = Row[9]
                 percentage = Row[10]
